@@ -14,5 +14,7 @@ namespace RepasoMVC.Models
         public int CategoryID { get; set; }
 
         public Category Category { get; set; }
+
+        public List<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -27,6 +27,10 @@ namespace RepasoMVC.Models
             modelBuilder.Entity<Product>().Property(p => p.ProductName).HasMaxLength(80);
             modelBuilder.Entity<Product>().HasIndex(p => new { p.ProductName, p.CategoryID }).IsUnique(true);
 
+            modelBuilder.Entity<Customer>().HasKey(c => c.CustomerID);
+            modelBuilder.Entity<OrderDetail>().HasKey(o => new { o.CustomerID, o.ProductID });
+            
+
             base.OnModelCreating(modelBuilder); 
         }
 
